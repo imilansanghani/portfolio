@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milan Sanghani — Founder, EdMission</title>
+<meta name="description" content="Milan Sanghani. Non-technical founder, multi-model orchestrator, and CEO of EdMission, building at the intersection of international education and immigration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EDEAE1;
+    --bg-2:#FBF9F3;
+    --ink:#1B1A13;
+    --text:#2C2B22;
+    --text-2:#54534A;
+    --text-3:#6E6D62;
+    --accent:#0A7A52;
+    --accent-br:#13AE79;
+    --line:rgba(27,26,19,.14);
+    --line-2:rgba(27,26,19,.09);
+    --bg-d:#121309;
+    --bg-d2:#1A1B10;
+    --text-d:#F1EFE4;
+    --text-db:#D3CFC0;
+    --text-d2:#9C998B;
+    --line-d:rgba(241,239,228,.15);
+    --disp:"Bricolage Grotesque",sans-serif;
+    --body:"Hanken Grotesk",sans-serif;
+    --mono:"IBM Plex Mono",monospace;
+    --maxw:1140px;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+ 
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px}
+  .band{padding:clamp(76px,11vw,138px) 0;position:relative;overflow:hidden}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);display:flex;align-items:center;gap:11px;margin-bottom:28px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 5px rgba(10,122,82,.14);animation:node 2.6s var(--ease) infinite}
+  @keyframes node{0%,100%{box-shadow:0 0 0 5px rgba(10,122,82,.14)}50%{box-shadow:0 0 0 5px rgba(10,122,82,.03)}}
+  .dark .eyebrow{color:var(--text-d2)}
+  .dark .eyebrow::before{background:var(--accent-br);box-shadow:0 0 0 5px rgba(19,174,121,.16)}
+  h2{font-family:var(--disp);font-weight:600;font-size:clamp(30px,4.6vw,50px);line-height:1.02;letter-spacing:-.025em;max-width:18ch;color:var(--ink)}
+  .dark h2{color:var(--text-d)}
+  .lede{font-size:clamp(17px,2vw,20px);color:var(--text-2);max-width:60ch;margin-top:22px;line-height:1.5}
+  .dark .lede{color:var(--text-db)}
+ 
+  .rise{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .rise.in{opacity:1;transform:none}
+ 
+  /* glow */
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+ 
+  /* progress */
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-br));transform:scaleX(0);transform-origin:0 50%;z-index:60}
+ 
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:55;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;background:rgba(237,234,225,0);backdrop-filter:blur(0px);transition:padding .35s var(--ease),background .35s,backdrop-filter .35s,border-color .35s;border-bottom:1px solid transparent}
+  nav.stuck{padding:13px 30px;background:rgba(237,234,225,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+  .brand{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .brand span{width:10px;height:10px;border-radius:50%;background:var(--accent);transition:transform .4s var(--ease)}
+  nav:hover .brand span{transform:scale(1.25)}
+  .navlinks{display:flex;gap:30px;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em}
+  .navlinks a{color:var(--text-2);position:relative;transition:color .25s}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;height:1.5px;width:0;background:var(--accent);transition:width .3s var(--ease)}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a:hover::after{width:100%}
+  @media(max-width:720px){.navlinks{display:none}}
+ 
+  /* HERO */
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 30px 44px;max-width:var(--maxw);margin:0 auto;position:relative;z-index:1}
+  .hero .glow{width:520px;height:520px;background:radial-gradient(circle,rgba(19,174,121,.28),transparent 68%);top:-140px;right:-120px;opacity:.55;animation:drift 16s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-46px,40px) scale(1.16)}}
+  .mask{display:block;overflow:hidden}
+  .ln{display:block;transform:translateY(118%);will-change:transform}
+  body.loaded .ln{transform:none;transition:transform 1.05s var(--ease)}
+ 
+  .hero-eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);margin-bottom:26px}
+  body.loaded .hero-eyebrow .ln{transition-delay:.05s}
+  .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(56px,12.5vw,140px);line-height:.88;letter-spacing:-.045em;color:var(--ink)}
+  .hero h1 .accentword{color:var(--accent)}
+  body.loaded h1 .mask:nth-of-type(1) .ln{transition-delay:.16s}
+  body.loaded h1 .mask:nth-of-type(2) .ln{transition-delay:.30s}
+ 
+  .load-up{opacity:0;transform:translateY(22px)}
+  body.loaded .load-up{opacity:1;transform:none;transition:opacity .9s ease,transform .9s var(--ease)}
+ 
+  .tags{display:flex;flex-wrap:wrap;gap:11px 12px;margin-top:36px}
+  .tag-pill{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.02em;border:1px solid var(--line);border-radius:100px;padding:10px 17px;color:var(--text);background:var(--bg-2);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+  .tag-pill:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 24px -14px rgba(10,122,82,.5)}
+  .tag-pill b{color:var(--accent);font-weight:700}
+  .thesis{font-size:clamp(18px,2.3vw,23px);line-height:1.5;max-width:47ch;margin-top:34px;color:var(--text)}
+  .thesis b{font-weight:600;color:var(--ink)}
+ 
+  .ledger{margin-top:auto;padding-top:46px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px 36px;align-items:center}
+  .ledger .l-cap{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+  .ledger .l-items{display:flex;flex-wrap:wrap;gap:15px 32px}
+  .ledger .li{display:flex;align-items:baseline;gap:10px;font-size:13.5px}
+  .ledger .li .yr{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+  .ledger .li .tx{color:var(--text-2)}
+  @media(max-width:640px){.ledger{grid-template-columns:1fr;gap:16px}}
+ 
+  /* ABOUT */
+  .dark{background:var(--bg-d);color:var(--text-d)}
+  #about .glow{width:600px;height:600px;background:radial-gradient(circle,rgba(19,174,121,.2),transparent 70%);bottom:-260px;left:-160px;opacity:.7}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:14px;position:relative;z-index:1}
+  .about-grid p{font-size:16.5px;color:var(--text-db);max-width:50ch}
+  .about-grid p + p{margin-top:18px}
+  .pull{font-family:var(--disp);font-weight:500;font-size:clamp(24px,3.2vw,34px);line-height:1.2;letter-spacing:-.02em;color:var(--text-d)}
+  .pull em{color:var(--accent-br);font-style:normal}
+  @media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:30px}}
+ 
+  /* SERVICES */
+  .svc-head{margin-bottom:54px;position:relative;z-index:1}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+  .card{border:1px solid var(--line);border-radius:16px;padding:30px 28px;background:var(--bg-2);position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+  .card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-br));transition:width .4s var(--ease)}
+  .card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -40px rgba(27,26,19,.55);border-color:rgba(10,122,82,.35)}
+  .card:hover::after{width:100%}
+  .card .num{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:18px;display:block}
+  .card h3{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.02em;margin-bottom:10px;line-height:1.12;color:var(--ink)}
+  .card p{color:var(--text-2);font-size:14.5px;line-height:1.5}
+  @media(max-width:820px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+ 
+  /* AWARDS */
+  #recognition .glow{width:560px;height:560px;background:radial-gradient(circle,rgba(19,174,121,.16),transparent 70%);top:-200px;right:-180px;opacity:.7}
+  .awards{border-top:1px solid var(--line-d);margin-top:42px;position:relative;z-index:1}
+  .award{display:grid;grid-template-columns:.42fr 1.6fr 1fr;gap:26px;align-items:baseline;padding:28px 0 28px 0;border-bottom:1px solid var(--line-d);position:relative;transition:padding-left .35s var(--ease)}
+  .award::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent-br);transform:scaleY(0);transform-origin:50% 0;transition:transform .4s var(--ease)}
+  .award:hover{padding-left:22px}
+  .award:hover::before{transform:scaleY(1)}
+  .award .ay{font-family:var(--mono);font-size:15px;color:var(--accent-br);font-weight:600}
+  .award .an{font-family:var(--disp);font-weight:600;font-size:clamp(19px,2.3vw,24px);letter-spacing:-.02em;color:var(--text-d);line-height:1.12}
+  .award .ai{font-family:var(--mono);font-size:12.5px;color:var(--text-db);letter-spacing:.02em}
+  @media(max-width:700px){.award{grid-template-columns:1fr;gap:6px}.award .ay{order:-1}}
+ 
+  /* EXPERIENCE + EDUCATION */
+  .xp{border-top:1px solid var(--line);position:relative;z-index:1}
+  .xp-item{padding:36px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:.85fr 2fr;gap:16px 44px}
+  .xp-meta .role{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+  .xp-meta .org{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-top:9px;letter-spacing:.02em;font-weight:500}
+  .xp-meta .when{font-family:var(--mono);font-size:12px;color:var(--text-3);margin-top:6px}
+  .xp-body ul{list-style:none}
+  .xp-body li{position:relative;padding-left:22px;color:var(--text-2);font-size:15.5px;line-height:1.55;margin-bottom:10px}
+  .xp-body li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent);opacity:.65}
+  .xp-body li:last-child{margin-bottom:0}
+  @media(max-width:720px){.xp-item{grid-template-columns:1fr;gap:16px}}
+ 
+  .edu{margin-top:60px;position:relative;z-index:1}
+  .edu-cap{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px}
+  .edu-row{display:grid;grid-template-columns:2fr 1fr auto;gap:16px 30px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+  .edu-row:first-of-type{border-top:1px solid var(--line)}
+  .edu-row .deg{font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+  .edu-row .sch{color:var(--text-2);font-size:14.5px}
+  .edu-row .yr{font-family:var(--mono);font-size:12.5px;color:var(--text-2);white-space:nowrap}
+  @media(max-width:640px){.edu-row{grid-template-columns:1fr;gap:4px}.edu-row .yr{order:-1;color:var(--accent)}}
+ 
+  /* CONTACT */
+  .contact{text-align:center;padding:clamp(96px,14vw,168px) 0}
+  #contact .glow{width:640px;height:640px;background:radial-gradient(circle,rgba(19,174,121,.22),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);opacity:.5}
+  .contact .inner{position:relative;z-index:1}
+  .contact h2{font-size:clamp(36px,6.8vw,72px);max-width:none;margin:0 auto;letter-spacing:-.035em}
+  .contact .sub{color:var(--text-db);margin-top:24px;font-size:18px;max-width:44ch;margin-left:auto;margin-right:auto}
+  .links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:46px}
+  .links a{font-family:var(--mono);font-size:13.5px;letter-spacing:.03em;border:1px solid var(--line-d);border-radius:100px;padding:13px 23px;color:var(--text-d);display:flex;align-items:center;gap:9px;transition:background .28s,border-color .28s,color .28s,transform .28s var(--ease)}
+  .links a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px)}
+  .links a .ar{transition:transform .28s var(--ease)}
+  .links a:hover .ar{transform:translate(3px,-3px)}
+  footer{padding:36px 30px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--text-d2);border-top:1px solid var(--line-d)}
+ 
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rise{opacity:1;transform:none}
+    .ln{transform:none}
+    .load-up{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+ 
+<nav id="nav">
+  <a class="brand" href="#top"><span></span>Milan Sanghani</a>
+  <div class="navlinks">
+    <a href="#about">about</a>
+    <a href="#expertise">expertise</a>
+    <a href="#recognition">recognition</a>
+    <a href="#experience">experience</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="hero-eyebrow mask"><span class="ln">Founder &amp; CEO · EdMission Inc. · Ottawa, Canada</span></div>
+  <h1>
+    <span class="mask"><span class="ln">Milan</span></span>
+    <span class="mask"><span class="ln accentword">Sanghani</span></span>
+  </h1>
+  <div class="tags load-up" style="transition-delay:.42s">
+    <span class="tag-pill"><b>Non-technical</b> founder</span>
+    <span class="tag-pill"><b>Multi-model</b> orchestrator</span>
+    <span class="tag-pill"><b>EdTech</b> &amp; immigration</span>
+  </div>
+  <p class="thesis load-up" style="transition-delay:.52s">I build and run AI-native products at the intersection of international education and immigration. A founder who ships by <b>orchestrating models</b>, not by writing code.</p>
+ 
+  <div class="ledger load-up" style="transition-delay:.62s">
+    <div class="l-cap">Recognition</div>
+    <div class="l-items">
+      <div class="li"><span class="yr">2024</span><span class="tx">Top 5 ML Companies, Ottawa — F6S</span></div>
+      <div class="li"><span class="yr">2024</span><span class="tx">Top 50 Hottest Companies, Collision Toronto</span></div>
+      <div class="li"><span class="yr">2023</span><span class="tx">Best Social Innovation — World Jams</span></div>
+      <div class="li"><span class="yr">2022</span><span class="tx">Nicol Entrepreneurship Grant — Carleton University</span></div>
+    </div>
+  </div>
+</header>
+ 
+<!-- ABOUT -->
+<section class="band dark" id="about">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="eyebrow rise">About</div>
+    <h2 class="rise">Where education meets immigration, run by a founder who builds.</h2>
+    <div class="about-grid">
+      <div class="rise">
+        <p class="pull">Get the right student into the right program, <em>funded, and across the border.</em></p>
+      </div>
+      <div class="rise">
+        <p>Since 2022 I have built EdMission into an international education and immigration consultancy that guides students from first application to arrival abroad. Before Canada, I ran an overseas education consulting business in India.</p>
+        <p>My edge is operational. As a non-technical founder, I design, build, and run products through AI orchestration, directing models across research, reasoning, and execution so a small operation moves like a much larger one.</p>
+        <p>The result is a practice that pairs hands-on admissions expertise with AI-native operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERTISE -->
+<section class="band" id="expertise">
+  <div class="wrap">
+    <div class="svc-head">
+      <div class="eyebrow rise">What I do</div>
+      <h2 class="rise">Consulting that carries a student the whole way.</h2>
+      <p class="lede rise">EdMission serves students from Nigeria, Ghana, and India applying to Canada and Germany, backed by a 30-plus university partnership network.</p>
+    </div>
+    <div class="cards">
+      <div class="card rise"><span class="num">01</span><h3>Admissions counselling</h3><p>Program selection and application strategy for undergraduate and graduate study.</p></div>
+      <div class="card rise"><span class="num">02</span><h3>Scholarship &amp; funding</h3><p>Matching students to the scholarships, grants, and funding routes they actually qualify for.</p></div>
+      <div class="card rise"><span class="num">03</span><h3>SOP &amp; motivation letters</h3><p>Application writing that reads as the student, not a template.</p></div>
+      <div class="card rise"><span class="num">04</span><h3>Application management</h3><p>End-to-end tracking of documents, deadlines, and submissions across every program.</p></div>
+      <div class="card rise"><span class="num">05</span><h3>Visa &amp; immigration</h3><p>Preparing students for study permits and the practical move abroad.</p></div>
+      <div class="card rise"><span class="num">06</span><h3>Community &amp; events</h3><p>A 2,000-plus member student community and in-person education fairs.</p></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- RECOGNITION -->
+<section class="band dark" id="recognition">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="eyebrow rise">Recognition</div>
+    <h2 class="rise">Awards &amp; features.</h2>
+    <div class="awards">
+      <div class="award rise">
+        <div class="ay">2024</div>
+        <div class="an">Top 5 ML Companies in Ottawa</div>
+        <div class="ai">F6S</div>
+      </div>
+      <div class="award rise">
+        <div class="ay">2024</div>
+        <div class="an">Top 50 Hottest Companies, Collision Conference Toronto</div>
+        <div class="ai">FoundersPress</div>
+      </div>
+      <div class="award rise">
+        <div class="ay">2023</div>
+        <div class="an">Best Social Innovation Award, International Pitch Competition</div>
+        <div class="ai">World Jams</div>
+      </div>
+      <div class="award rise">
+        <div class="ay">2022</div>
+        <div class="an">Nicol Entrepreneurship Grant</div>
+        <div class="ai">Carleton University</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERIENCE + EDUCATION -->
+<section class="band" id="experience">
+  <div class="wrap">
+    <div class="eyebrow rise">Experience</div>
+    <h2 class="rise" style="margin-bottom:46px">A decade building in education, three of them AI-native.</h2>
+    <div class="xp">
+      <div class="xp-item rise">
+        <div class="xp-meta">
+          <div class="role">Founder &amp; CEO</div>
+          <div class="org">EdMission Inc.</div>
+          <div class="when">Ottawa, Canada · 2022 – present</div>
+        </div>
+        <div class="xp-body">
+          <ul>
+            <li>Built an international education and immigration consultancy serving students across Africa and India.</li>
+            <li>Grew a 30-plus university partnership network across the US and Canada.</li>
+            <li>Built a 2,000-plus member student community and organized in-person education fairs, including Toronto in 2025.</li>
+            <li>Operate AI-native: design and run products through multi-model orchestration as a non-technical founder.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-item rise">
+        <div class="xp-meta">
+          <div class="role">Founder</div>
+          <div class="org">Overseas Education Consulting</div>
+          <div class="when">India · prior to EdMission</div>
+        </div>
+        <div class="xp-body">
+          <ul>
+            <li>Increased revenue by 200% through B2B relationships with 10-plus domestic and international companies over three years.</li>
+            <li>Counselled and recruited 100-plus students for undergraduate and graduate programs abroad.</li>
+            <li>Reduced operational cost by up to 40% by shifting from a manual to a digital business model.</li>
+            <li>Led marketing, product launches, and promotions.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-item rise">
+        <div class="xp-meta">
+          <div class="role">President</div>
+          <div class="org">Graduate Students' Association</div>
+          <div class="when">Carleton University · 2022 – 2023</div>
+        </div>
+        <div class="xp-body">
+          <ul>
+            <li>Led the graduate student body for a full term, representing thousands of students.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="edu rise">
+      <div class="edu-cap">Education</div>
+      <div class="edu-row">
+        <div class="deg">Master of Entrepreneurship</div>
+        <div class="sch">Carleton University, Ottawa, Canada</div>
+        <div class="yr">2021 – 2023</div>
+      </div>
+      <div class="edu-row">
+        <div class="deg">Master of Science</div>
+        <div class="sch">Veer Narmad South Gujarat University, India</div>
+        <div class="yr">2013 – 2015</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section class="dark contact" id="contact">
+  <div class="glow"></div>
+  <div class="wrap inner">
+    <div class="eyebrow rise" style="justify-content:center">Get in touch</div>
+    <h2 class="rise">Let's build something<br>across borders.</h2>
+    <p class="sub rise">For partnerships, admissions support, or a conversation about AI in education.</p>
+    <div class="links rise">
+      <a href="mailto:milan@edmission.io">milan@edmission.io<span class="ar">↗</span></a>
+      <a href="https://www.linkedin.com/in/imilansanghani/" target="_blank" rel="noopener">LinkedIn<span class="ar">↗</span></a>
+      <a href="https://www.instagram.com/imilansanghani/" target="_blank" rel="noopener">Instagram<span class="ar">↗</span></a>
+      <a href="https://edmission.io" target="_blank" rel="noopener">edmission.io<span class="ar">↗</span></a>
+    </div>
+  </div>
+</section>
+ 
+<footer>Milan Sanghani · EdMission Inc. · Ottawa, Canada</footer>
+ 
+<script>
+  const nav=document.getElementById('nav');
+  const prog=document.getElementById('progress');
+  function onScroll(){
+    nav.classList.toggle('stuck',scrollY>20);
+    const h=document.documentElement.scrollHeight-innerHeight;
+    prog.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+ 
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+ 
+  addEventListener('load',()=>document.body.classList.add('loaded'));
+  setTimeout(()=>document.body.classList.add('loaded'),600);
+</script>
+</body>
+</html>
+ 
